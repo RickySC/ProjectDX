@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm7p1p3srxluf"]
+
+[ext_resource type="PackedScene" uid="uid://cku5v7nl6a8g8" path="res://Scene/Character/ControlAble/player_knight.tscn" id="1_yckd4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_asq72"]
+
+[sub_resource type="Environment" id="Environment_8lqgs"]
+
+[node name="EditScene" type="Node"]
+
+[node name="PlayerKnight" parent="." instance=ExtResource("1_yckd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 4.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_asq72")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7)
+environment = SubResource("Environment_8lqgs")
